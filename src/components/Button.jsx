@@ -1,8 +1,9 @@
-import React from 'react'
 
-const Button = () => {
+const Button = ({col, textsize, callback, children}) => {
   return (
-    <div>Button</div>
+    <>
+    <button style={{backgroundColor:col, fontSize: textsize}} onClick={callback}>{children}</button>
+    </>
   )
 }
 
