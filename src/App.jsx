@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import Button from './components/Button'
 import Text from './components/Text'
 import NavBar from './components/NavBar'
+import Container from './components/Container'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -21,7 +22,7 @@ function App() {
     <>
     <div className="App">
         <NavBar />
-      </div>
+    </div>
     <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -45,7 +46,9 @@ function App() {
       <Button col={color1} textsize={textsize1} callback={() =>setText('se apretó el boton 1')}>Boton 1</Button>
       <Button col={color2} textsize={textsize2} callback={() =>setText('se apretó el boton 2')}>Boton 2</Button>
       <Text t={text} />
+      <Container />
     </>
+    
   )
 }
 

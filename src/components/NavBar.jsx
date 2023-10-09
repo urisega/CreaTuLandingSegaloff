@@ -1,97 +1,51 @@
-const NavBar = () => {
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+function NavBar() {
   return (
-    <>
-    <nav class="navbar navbar-expand-lg bg-light navbar-light">
-      <div class="container-fluid">
-        <img src="tortugalogo.jpg" width="50" height="50"></img>
-        <a class="navbar-brand" href="#">MiECommerce</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-mdb-toggle="collapse"
-          data-mdb-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
-
+    <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+          <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src="/tortugalogo.jpg"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{' '}
+            MiECommerce
+          </Navbar.Brand>
         
-        <ul class="navbar-nav">
         
-        <li class="nav-item dropdown">
-            <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-mdb-toggle="dropdown"
-            aria-expanded="false"
-            >
-            Dropdown link2222
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li>
-                <a class="dropdown-item" href="#">Action</a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="#">Another action</a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-            </li>
-            </ul>
-        </li>
-        </ul>
-  
-    
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Opciones
-
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Accion1</a></li>
-                <li><a class="dropdown-item" href="#">Accion2</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-          </ul>
-    
-          <ul class="navbar-nav d-flex flex-row me-1">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Opcion1</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1">Opcion2</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+        <ul class="navbar-nav d-flex flex-row me-1">
             <li class="nav-item me-3 me-lg-0">
               <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
             </li>
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
-            </li>
           </ul>
-          <form class="w-auto">
-            <input
-              type="search"
-              class="form-control"
-              placeholder="Type query"
-              aria-label="Search"
-            />
-          </form>
-        </div>
-      </div>
-    </nav>
-    </>
-  )
+      </Container>
+    </Navbar>
+  );
 }
 
-export default NavBar
+export default NavBar;
